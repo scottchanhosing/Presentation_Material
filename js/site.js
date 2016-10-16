@@ -1,7 +1,23 @@
 ﻿// Write your Javascript code.
 
+
+eventdata = []
+
+$.ajax({
+    url: "data.csv",
+    async: false,
+    success: function (csvd) {
+        var items = $.csv.toObjects(csvd);
+        var jsonobject = JSON.stringify(items);
+        eventdata = items
+    },
+    dataType: "text",
+    complete: function () {
+    }
+});
 var app = angular.module("EventListApp", []);
 app.controller("EventCtrl", function ($scope) {
+    /*
     $scope.events = [
         {
             Name: "Financial Dialogue Day",
@@ -104,10 +120,15 @@ app.controller("EventCtrl", function ($scope) {
             Description: ""
         }
     ];
-
+    */
+    $scope.events = eventdata
     $scope.getItem = function getItem(idx, list, key) {
         return list[idx][key];
     };
+    $scope.goToDate = function goToDate(year, month, day) {
+        //console.log(year, month, day);
+        $('#datepicker').datepicker('update', new Date(parseInt(year), parseInt(month)-1, parseInt(day)));
+    }
 
 
 });
@@ -116,7 +137,9 @@ app.controller("EventCtrl", function ($scope) {
 $(function () {
 
     // Instantiate MixItUp:
-
     $('#Container').mixItUp();
+    $('#datepicker').datepicker({
+        todayHighlight: true,
+    });
 
 });
