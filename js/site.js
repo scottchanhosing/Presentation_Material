@@ -1,6 +1,4 @@
 ﻿// Write your Javascript code.
-
-
 eventdata = []
 
 $.ajax({
@@ -127,12 +125,12 @@ app.controller("EventCtrl", function ($scope) {
     };
     $scope.goToDate = function goToDate(year, month, day) {
         //console.log(year, month, day);
-        $('#datepicker').datepicker('update', new Date(parseInt(year), parseInt(month)-1, parseInt(day)));
+        $('#datepicker').datepicker('update', new Date(parseInt(year), parseInt(month) - 1, parseInt(day)));
+        $('#datepicker_input').val(
+            $('#datepicker').datepicker('getFormattedDate')
+        );
     }
-
-
 });
-
 
 $(function () {
 
@@ -141,5 +139,79 @@ $(function () {
     $('#datepicker').datepicker({
         todayHighlight: true,
     });
+    $('#datepicker').on("changeDate", function () {
+        $('#datepicker_input').val(
+            $('#datepicker').datepicker('getFormattedDate')
+        );
+    });
+    $('.responsive-calendar').responsiveCalendar({
+        events: {
+            "2016-10-30": { "number": 5, "badgeClass": "badge-warning"},
+            "2016-10-26": { "number": 1, "badgeClass": "badge-warning"},
+        }
+    });
+
+    $('.go-to-calendar').click(function () {
+        $('.go-to-calendar').css("display", "none");
+        $('.go-to-event-list').css("display", "block");
+        $('#search-bar').css("display", "none");
+        $('#search-content').css("display", "none");
+        $('#my-event').css('display', 'block');
+    })
+
+    $('.go-to-event-list').click(function () {
+        $('.go-to-calendar').css("display", "block");
+        $('.go-to-event-list').css("display", "none");
+        $('#search-bar').css("display", "block");
+        $('#search-content').css("display", "block");
+        $('#my-event').css('display', 'none');
+    })
 
 });
+
+
+window.fbAsyncInit = function () {
+    FB.init({
+        appId: '325347081159964',
+        xfbml: true,
+        version: 'v2.5',
+        cookie: true,
+    });
+};
+
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function fblogin() {
+    // Hex manipulation
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // Already logged in
+            console.log('connected')
+            FB.api('/me', {
+                fields: 'id, name'
+            }, function (response) {
+                //share(fbname);
+                $(".fb-not-login").css('display', 'none');
+                $(".fb-login").css('display', 'block');
+                $(".fb-name").html(response.name)
+            });
+        } else {
+            // Not yet logged in
+            console.log('not connected')
+            FB.login(function (response) {
+                if (response.authResponse) {
+                    // Log in success
+                    console.log('logged in')
+                    fblogin()
+                }
+            }, { scope: 'email, public_profile' }
+            );
+        }
+    });
+}

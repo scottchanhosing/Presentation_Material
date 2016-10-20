@@ -8,15 +8,16 @@
     <script src="/js/jquery-ui-1.10.4.min.js"></script>
     <script src="/js/jquery-ui.custom.min.js"></script>  
     <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--<script src="~/lib/bootstrap/dist/js/utils.js"></script>-->
-    <!--<script src="~/lib/bootstrap/dist/js/tether.js"></script>-->
+    <!--<script src="/lib/bootstrap/dist/js/utils.js"></script>-->
+    <!--<script src="/lib/bootstrap/dist/js/tether.js"></script>-->
     
     <script src="/js/jquery-csv.js"></script>
     <script src="/js/bootstrap-datepicker.js"></script>
 
     <script src="/js/angular.min.js"></script>
-    <!--<script src="~/js/tsort.js"></script>-->
+    <!--<script src="/js/tsort.js"></script>-->
 
+    <script src="/js/responsive-calendar.js"></script>
     <script src="/js/jquery.mixitup.js"></script>
 
     <script src="/js/site.js"></script>
@@ -26,8 +27,10 @@
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">     
-    <!--<link href="~/css/tsort.css" rel="stylesheet">-->
+    <!--<link href="/css/tsort.css" rel="stylesheet">-->
     <link href="/css/bootstrap-datepicker.min.css" rel="stylesheet"> 
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/responsive-calendar.css" rel="stylesheet">
 
     <link href="/css/site.css" rel="stylesheet">
 
@@ -40,15 +43,35 @@
 <body id="page-top">
 
     <section id="top-bar">
+        <span onclick="fblogin()" style="position: fixed; color: #3b5998; left: 20px; font-size: 17px; top: 10px; cursor: pointer ">
+            <span class="fb-not-login">   
+                <i class="fa fa-facebook-square"></i> 
+                Login
+            </span>
+            <span class="fb-login" style="display: none; font-weight: 600">
+                <span>Welcome! </span><span class="fb-name"></span>
+            </span>
+        </span>
         <span style="font-family: 'Pacifico', cursive ;font-size: 28px; font-weight: 400; padding-left: 15px">
             <i class="fa fa-check-circle-o"></i>
             Eventually
         </span>
-    </section>
+        <span style="position: fixed; color: #165668; right: 20px; font-size: 17px; top: 10px; cursor: pointer ">
+            <span class="go-to-event-list animated fadeIn" style="display: none;">
+                <i class="fa fa-arrow-circle-left"></i>
+                Search for Event
+            </span>
+            <span class="go-to-calendar animated fadeIn">
+                Go to my Event
+                <i class="fa fa-arrow-circle-right"></i>
+            </span>
+        </span>
 
-    <section id="search-bar" class="container">
+    </section>
+		
+	<section id="search-bar" class="container animated bounceInRight">
 		<div class="row">
-			<div class="col-xs-12 col-sm-7">
+			<div class="col-md-7 col-xs-12">
 				<div class="col-xs-12 m-t-1">
 					<h5><i class="fa fa-search"></i> Search Option</h5>
 				</div>
@@ -109,14 +132,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-5">
-				<div class="col-sm-3"></div>
-				<div id="datepicker" class="col-sm-8 datepicker-custom m-b-1 m-t-1" style="pointer-events: none; zoom: 120%"></div>
-				<div class="col-sm-1"></div>
+			<div class="col-md-5 col-xs-12">
+				<div class="col-xs-3"></div>
+				<div id="datepicker" class="col-xs-5 col-md-8 datepicker-custom m-b-1 m-t-1" style="pointer-events: none; zoom: 120%"></div>
+				<input type="hidden" id="datepicker_input">
+				<div class="col-xs-4 col-md-1"></div>
 			</div>
 		</div>
 	</section>
-	<section id="search-content" class="event-container container m-t-1">
+
+	<section id="search-content" class="event-container container m-t-1 animated bounceInRight">
 		<div ng-app="EventListApp" ng-controller="EventCtrl">
 			<div id="Container">
 				<div class="event-title col-xs-12">
@@ -133,7 +158,7 @@
 						<p>Deadline</p>
 					</div>
 					<div class="col-xs-1 event-title-col">
-						<button class="btn btn-secondary">Get All</button>
+						<button class="btn btn-secondary">All</button>
 					</div>
 				</div>
 				<div ng-repeat="event in events" class="event-item mix col-xs-12" ng-class="getItem($index, events, 'Nature')" 
@@ -161,9 +186,46 @@
 		</div>
 	</section>
 
-	<section id="bottom-bar" class="m-t-2">
-        <span>Powered by Scott Chan</span>
+	<section id="my-event" class="container animated bounceInLeft m-t-2 m-b-3" style="display: none">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 col-xs-12">
+				<!-- Responsive calendar - START -->
+				<div class="responsive-calendar">
+					<div class="controls m-b-1">
+						<a class="pull-left" data-go="prev"><div class="btn btn-secondary"><i class="fa fa-angle-double-left"></i> Prev </div></a>
+						<h4 class="calendar-head">
+							<i class="fa fa-calendar"></i>
+							 - <span data-head-month></span> - <span data-head-year></span>
+						</h4>
+						<a class="pull-right" data-go="next"><div class="btn btn-secondary"><i class="fa fa-angle-double-right"></i> Next </div></a>
+					</div><hr />
+					<div class="day-headers">
+						<div class="day header">Mon</div>
+						<div class="day header">Tue</div>
+						<div class="day header">Wed</div>
+						<div class="day header">Thu</div>
+						<div class="day header">Fri</div>
+						<div class="day header">Sat</div>
+						<div class="day header">Sun</div>
+					</div>
+					<div class="days" data-group="days">
+						<!-- the place where days will be generated -->
+					</div>
+				</div>
+				<!-- Responsive calendar - END -->
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+	</section>
+
+    <section id="bottom-bar" class="m-t-2">
+        <i class="fa fa-star"></i><span> Powered by Scott Chan </span>
     </section>
 
 </body>
 </html>
+
+
+
