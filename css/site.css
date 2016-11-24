@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     color: #373a3c;
     background-color: #fff;
@@ -11,6 +11,32 @@ p {
     font-size: 15px;
     font-weight: 500;
     margin-bottom: 5px;
+}
+
+a {cursor: pointer}
+
+.m-t-1 {
+    margin-top: 1rem!important
+}
+
+.m-t-2 {
+    margin-top: 2rem!important
+}
+
+.m-t-3 {
+    margin-top: 3rem!important
+}
+
+.m-b-1 {
+    margin-bottom: 1rem!important
+}
+
+.m-b-2 {
+    margin-bottom: 2rem!important
+}
+
+.m-b-3 {
+    margin-bottom: 3rem!important
 }
 
 /* Wrapping element */
@@ -47,19 +73,31 @@ textarea {
   }
 }
 
-#top-bar {
+.go-to-calendar,
+.go-to-event-list {
     padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
-    height: 50px; 
-    position: fixed;
-    color: #898e95;
-    top:0;
-    border-bottom: 2px solid #e1e2e4;
-    text-align: center;
-    background-color: white;
-    z-index: 1000
+    padding-right: 15px
+}
 
+a.strong {
+    font-weight: 700
+}
+
+@media screen and (min-width: 768px) {
+    .nav.navbar-nav {
+        margin-left: 25px;
+    }
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+    .navbar-default .navbar-nav .go-to-event-list.active a,
+    .navbar-default .navbar-nav .go-to-calendar.active a,
+    .navbar-default .navbar-nav .go-to-calendar.active a:hover,
+    .navbar-default .navbar-nav .go-to-event-list.active a:hover {
+        background-image: none; 
+        background-color: transparent;
+        box-shadow: 0 5px 2px -2px #898e95;
+    }
 }
 
 #search-bar {
@@ -94,11 +132,11 @@ textarea {
 }
 
 .btn-secondary.add-to-cert {
+    margin-top: 10px;
     width: 40px;
     border-radius: 50%;
     height: 40px;
     line-height: 20px;
-
 }
 
 .btn-secondary:hover,
@@ -174,7 +212,7 @@ textarea {
 
 .event-title .event-title-col,
 .event-item .event-item-col {
-    margin-top: 10px;
+    margin-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -192,7 +230,7 @@ textarea {
 }
 
 .event-name {
-    font-size: 18px;
+    font-size: 16px;
     color: #039be5;
 }
 
@@ -223,7 +261,8 @@ i.Workshop {
 .datepicker-custom {
     background-color: #fff;
     border: solid 2px #528FCC;
-    border-radius: 5px
+    border-radius: 5px;
+    width: auto
 }
 
 #bottom-bar {
@@ -249,8 +288,6 @@ i.Workshop {
         padding: 10px
     }
 }
-
-
 
 /*=============================================================================*/
 
@@ -309,5 +346,69 @@ i.Workshop {
     padding: 2px 5px;
 }
 
+.custom-header h2, .custom-header h3 {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
 
+.custom-header h2 {
+    font-size: 20px
+}
+
+.custom-header h3 {
+    font-size: 15px
+}
+.fc-calendar .fc-row > div.selected,
+.fc-past.selected {
+    background-color: #ef4f69
+}
+.fc-calendar .fc-row > div.selected > .fc-date{
+    color: #fff
+}
+
+.custom-content-reveal h4 {
+    margin-bottom: 15px
+}
+
+span.cal-event-name {
+    font-size: 23px;
+    display: block;
+    color: #333;
+    padding: 5px 30px;
+    font-weight: 800;
+}
+
+span.cal-event-time {
+    font-size: 15px;
+    display: block;
+    padding: 0px 30px;
+}
+
+span.cal-event-venue {
+    font-size: 15px;
+    display: block;
+    padding: 0px 30px;
+}
+
+span.cal-event-detail {
+    font-size: 18px;
+    display: block;
+    color: #333;
+    padding: 10px 40px;
+    text-align: left;
+}
+
+span.cal-event-deadline {
+    font-size: 15px;
+    display: block;
+    padding: 5px 40px;
+    text-align: right;
+}
+
+span.cal-event-link {
+    font-size: 15px;
+    display: block;
+    padding: 5px 40px;
+    text-align: left;
+}
 /*=============================================================================*/
