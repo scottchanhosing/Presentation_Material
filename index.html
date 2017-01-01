@@ -1,299 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Eventually_Demo</title>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- JavaScript -->
-    <script src="/lib/jquery/dist/jquery.min.js"></script>
-    <script src="/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/js/jquery-ui.custom.min.js"></script>  
-    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--<script src="/lib/bootstrap/dist/js/utils.js"></script>-->
-    <!--<script src="/lib/bootstrap/dist/js/tether.js"></script>-->
-    
-    <script src="/js/jquery-csv.js"></script>
-    <script src="/js/bootstrap-datepicker.js"></script>
+		<title>Bank of China(Hong Kong) - Management Trainee Panel Interview - Scott Chan</title>
 
-    <script src="/js/angular.min.js"></script>
-    <!--<script src="/js/tsort.js"></script>-->
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+		
+		<script src="lib/js/jquery-3.1.1.min.js"></script>
+		
+		<style>
+			body {
+				font-family: "Microsoft JhengHei","Helvetica Neue",Helvetica,Arial,sans-serif;!important
+			}
+			.reveal h1,
+			.reveal h2,
+			.reveal h3,
+			.reveal h4,
+			.reveal h5,
+			.reveal h6,
+			.reveal p,
+			.reveal span,
+			.reveal li,
+			.reveal td{
+				font-family: "Microsoft JhengHei","Helvetica Neue",Helvetica,Arial,sans-serif;!important
+			}
+			.size1 {
+				font-size: 30px!important
+			}
+			.size2 {
+				font-size: 25px!important
+			}
+			.size3 {
+				font-size: 20px!important
+			}
+			.size3 td{
+				font-size: 15px!important;
+				text-align:left!important;
+				line-height: 35px!important
+			}
+			.size3 td span{
+				font-size: 23px!important;
+				font-weight: 700;
+			}
+			.size3 td img{
+				width: 100px;
+				height: auto;
+				margin:0;
+				border: none;
+				position: relative;
+			}
+			.size4 {
+				font-size: 15px!important;
+				margin-bottom: 15px!important;
+				line-height: 18px
+			}
+			.size4 i{
+				font-size: 28px!important;
+				color:#a22!important;
+			}
+			.bg1 {
+				background-image: url("img/bg2.jpg");
+				background-repeat: no-repeat;
+				background-position: 85% 20%;
+				background-size: cover;
+			}
+			.type1 {
+				border-bottom: 1px solid #ccc!important;
+				margin: 0 100px 30px!important
+			}
+			.red {
+				color:#a00!important;
+			}
+			.gray {
+				color:#555555!important;
+			}
+		</style>
 
-    <!--Personal Calendar-->
-    <link rel="stylesheet" type="text/css" href="/lib/calendario/css/calendar.css">
-    <link rel="stylesheet" type="text/css" href="/lib/calendario/css/custom_3.css">
-    <script type="text/javascript" src="/lib/calendario/js/calendario.min.js"></script>
-    <script type="text/javascript" src="/lib/calendario/js/data.js"></script>
-    <script type="text/javascript" src="/lib/calendario/js/modernizr.custom.63321.js"></script>
-    
-    <!--End of Personal Calendar-->
-
-    <script src="/js/responsive-calendar.js"></script>
-
-    <script src="/js/jquery.mixitup.js"></script>
-
-    <!-- CSS -->
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/css/font-awesome.min.css" rel="stylesheet">     
-    <!--<link href="/css/tsort.css" rel="stylesheet">-->
-    <link href="/css/bootstrap-datepicker.min.css" rel="stylesheet"> 
-    <link href="/css/animate.css" rel="stylesheet">
-    <link href="/css/responsive-calendar.css" rel="stylesheet">
-
-    <link href="/css/site.css" rel="stylesheet">
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-
-    <script src="/js/site.js"></script>
-
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-87717382-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-</head>
-
-<body id="page-top">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#eventually_topbar_list" aria-expanded="false">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <span style="font-family: 'Pacifico', cursive ;font-size: 23px; font-weight: 400;color: #898e95;">
-                        <i class="fa fa-check-circle-o"></i>
-                        Eventually
-                    </span>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="eventually_topbar_list">
-                <ul class="nav navbar-nav">
-                    <li class="active go-to-event-list">
-                        <a class="strong">
-                            SEARCH
-                        </a>
-                    </li>
-                    <li class="go-to-calendar">
-                        <a class="strong">
-                            EVENT
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a>
-                            <span onclick="fblogin()" style="color: #3b5998; left: 20px; font-size: 17px; top: 10px; cursor: pointer ">
-                                <span class="fb-not-login">
-                                    <i class="fa fa-facebook-square"></i>
-                                    Login
-                                </span>
-                                <span class="fb-login" style="display: none; font-weight: 600">
-                                    <span class="fb-name"></span>
-                                </span>
-                            </span>
-                        </a>                     
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-	
-	
-	
-	
-    
-
-<section id="search-bar" class="container animated bounceInRight">
-    <div class="row">
-        <div class="col-md-7 col-xs-12">
-            <div class="col-xs-12">
-                <h4><i class="fa fa-search"></i> Search Option</h4>
-            </div>
-            <div class="col-xs-12 m-t-1"> 
-                <div class="col-xs-2">         
-                    <label style="width: 70px; padding-right: 2em">Sort:</label>
-                </div>
-                <div class="col-xs-10">
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary sort active" data-sort="year:asc month:asc date:asc time:asc">
-                            <i class="fa fa-calendar-o"></i>
-                            Date                     
-                        </span>
-                    </div> 
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary sort" data-sort="name:asc">
-                            <i class="fa fa-bookmark-o"></i>
-                            Name
-                        </span>
-                    </div>
-                </div>            
-            </div>
-            <div class="col-xs-12 m-t-1 m-b-1">
-                <div class="col-xs-2">
-                    <label style="width: 70px; padding-right: 2em">Filter:</label>
-                </div>
-                <div class="col-xs-10">
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary filter" data-filter="all">
-                            <i class="fa fa-circle" style="color: #373a3c"></i>
-                            All
-                        </span>
-                    </div>
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary filter" data-filter=".Competition">
-                            <i class="fa fa-circle Competition"></i>
-                            Competition
-                        </span>
-                    </div>
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary filter" data-filter=".Recruitment">
-                            <i class="fa fa-circle Recruitment"></i>
-                            Recruitment Talk
-                        </span>
-                    </div>
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary filter" data-filter=".Talk">
-                            <i class="fa fa-circle Talk"></i>
-                            Conference
-                        </span>
-                    </div>
-                    <div class="col-xs-6 no-padding">
-                        <span class="btn btn-tertiary filter" data-filter=".Workshop">
-                            <i class="fa fa-circle Workshop"></i>
-                            Workshop
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5 col-xs-12 hidden-xs">
-            <div class="col-xs-2"></div>
-            <div id="datepicker" class="col-xs-8 datepicker-custom m-b-1 m-t-1" style="pointer-events: none; zoom: 80%"></div>
-            <input type="hidden" id="datepicker_input">
-            <div class="col-xs-2"></div>
-        </div>
-    </div>
-</section>
-
-<section id="search-content" class="event-container container m-t-1 animated bounceInRight">
-
-    <div ng-app="EventListApp" ng-controller="EventCtrl">
-        <div id="Container">
-            <div class="event-title col-xs-12">
-                <div class="col-xs-1 event-title-col">
-                    <i style="margin-top: 10px" class="fa fa-circle"></i>
-                </div>
-                <div class="col-xs-6 event-title-col">
-                    <p>Event</p>
-                </div>
-                <div class="col-xs-2 event-title-col">
-                    <p>Venue</p>
-                </div>
-                <div class="col-xs-2 event-title-col hidden-xs-down">
-                    <p>Deadline</p>
-                </div>
-                <div class="col-xs-1 event-title-col">
-                    <!--<button class="btn btn-secondary">All</button>-->
-                </div>
-            </div>
-            <div ng-repeat="event in events" class="event-item mix col-xs-12" ng-class="getItem($index, events, 'Nature')"
-                    data-year="{{event.StartYear}}" data-month="{{event.StartMonth}}" data-date="{{event.StartDate}}"
-                    data-time="{{event.StartTime}}" data-name="{{event.Name}}" ng-click="goToDate(event.StartYear, event.StartMonth, event.StartDate)">
-                <div class="col-xs-1 event-item-col event-type-color">
-                    <i class="fa fa-circle"></i>
-                </div>
-                <div class="col-xs-6 event-item-col">
-                    <p class="event-name"><strong>{{event.Name}}</strong></p>
-                    <p>{{ event.StartYear == event.EndYear && event.StartMonth == event.EndMonth && event.StartDate == event.EndDate ? event.StartDate+'/'+event.StartMonth+'/'+event.StartYear  : event.StartDate+'/'+event.StartMonth+'/'+event.StartYear+' - '+event.EndDate+'/'+event.EndMonth+'/'+event.EndYear }} </p>
-                    <p>{{event.StartTime}} -{{event.EndTime}}</p>
-                </div>
-                <div class="col-xs-2 event-item-col">
-                    <p>{{event.Venue}}</p>
-                </div>
-                <div class="col-xs-2 event-item-col hidden-xs-down">
-                    <p>{{event.Deadline}}</p>
-                </div>
-                <div class="col-xs-1 event-item-col text-center">
-                    <span class="btn btn-secondary add-to-cert" ng-click="addData(event)"><i class="fa fa-plus"></i></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="my-event" class="container animated bounceInLeft m-t-2 m-b-3" style="display: none">
-    <!--
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 col-xs-12">
-            <div class="responsive-calendar">
-                <div class="controls m-b-1">
-                    <a class="pull-left" data-go="prev"><div class="btn btn-secondary"><i class="fa fa-angle-double-left"></i> Prev </div></a>
-                    <h4 class="calendar-head">
-                        <i class="fa fa-calendar"></i>
-                         - <span data-head-month></span> - <span data-head-year></span>
-                    </h4>
-                    <a class="pull-right" data-go="next"><div class="btn btn-secondary"><i class="fa fa-angle-double-right"></i> Next </div></a>
-                </div><hr />
-                <div class="day-headers">
-                    <div class="day header">Mon</div>
-                    <div class="day header">Tue</div>
-                    <div class="day header">Wed</div>
-                    <div class="day header">Thu</div>
-                    <div class="day header">Fri</div>
-                    <div class="day header">Sat</div>
-                    <div class="day header">Sun</div>
-                </div>
-                <div class="days" data-group="days">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    -->
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="custom-calendar-wrap">
-                <div id="custom-inner" class="custom-inner">
-                    <div class="custom-header clearfix">
-                        <nav>
-                            <span id="custom-prev" class="custom-prev"></span>
-                            <span id="custom-next" class="custom-next"></span>
-                        </nav>
-                        <h2 id="custom-month" class="custom-month"></h2>
-                        <h3 id="custom-year" class="custom-year"></h3>
-                    </div>
-                    <div id="calendar" class="fc-calendar-container"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-</section>
-	
-	
-	
-	
-	
-	
-	
-    <section id="bottom-bar" class="m-t-2">
-        <i class="fa fa-star"></i><span> Powered by Scott Chan </span>
-    </section>
-
-</body>
-
+	</head>
+	<body style='background-color: #222;'>
+		<div class="reveal">
+			<div class="slides" style='background-color: white;'>
+				<section>
+					<div class='col-xs-6' style='text-align:left;padding-left: 35px'>
+						<br>
+						<h3 style='color:#a00'>中銀香港</h3>
+						<p class='size1 gray'><b>見習管理人員(MT)專題匯報</b><p>
+						<p class='size2'>
+							陳浩昇<br>
+							香港中文大學<br>
+							計量金融及風險管理科學
+						</p>
+						<p class='size2'>
+							2017年1月5日
+						</p>
+					</div>
+					<div class='col-xs-6 bg1'>
+						<br><br><br><br><br><br><br><br>					
+					</div>
+				</section>
+				<section>
+					<h3 class='type1' style='color:#a00;'>流程</h3>
+					<ol class="fragment">
+						<li class="fragment">世界瞬息萬變</li>
+						<li class="fragment">銀行業時異事異</li>
+						<li class="fragment">我們可以.....</li>
+						<li class="fragment">見縫插針</li>
+						<li class="fragment">爭分奪秒</li>
+					</ol>
+				</section>
+				<section>
+					<h3 class='type1 gray'>1. 世界<span class='red'>瞬息萬變</span></h3>
+				</section>
+				<section>
+					<h3 class='type1 gray'>2016<span class='red'>大事回顧</span></h3>
+					<ul class="fragment">
+						<li class="fragment">全球經濟不穩定</li>
+						<li class="fragment">內地經濟增長放緩</li>
+						<li class="fragment">金融市場波動</li>
+					</ul>
+				</section>
+				<section>
+					<h3 class='type1 gray'>2. 銀行業<span class='red'>時異事異</span></h3>
+				</section>
+				<section>
+					<h3 class='type1 gray'>看看<span class='red'>我們</span></h3>
+					<div class='col-xs-6'>
+						<blockquote style='font-style:normal;width: 100%;margin: 0'>
+							<h4 class='size2' style='padding-bottom: 20px'>四大藍圖</h4>
+							<ul class="fragment size3" style='line-height: 43px; padding-left: 20px'>
+								<li><span class='red'>東盟及香港</span>地區的戰略佈局</li>
+								<li>提高對<span class='red'>客戶服務</span>能力及<span class='red'>優化業務</span>流程和操作</li>
+								<li><span class='red'>多元化平台</span>的競爭力</li>
+								<li><span class='red'>互聯網、大數據、雲計算</span>等技術發展及與傳統業務融合</li>
+							</ul>
+						</blockquote>
+					</div>
+					<div class='col-xs-6'>
+						<blockquote style='font-style:normal;width: 100%;margin: 0; background: rgba(255, 255, 255, 0.05);box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);'>
+							<h4 class='size2' style='padding-bottom: 20px'>八大業務</h4>
+							<ul style='text-align:center; margin: 0'>
+								<span class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-credit-card'>		
+									</i>
+									<br/>
+									信用卡
+									<br/>
+									Credit Card
+								</span>
+								<span class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-bank'>		
+									</i>
+									<br/>
+									私人銀行
+									<br/>
+									Private Banking
+								</span>
+								<span class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-heart-o'>		
+									</i>
+									<br/>
+									人壽保險
+									<br/>
+									Life Insurance
+								</span>
+								<span class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-home'>		
+									</i>
+									<br/>
+									資產管理
+									<br/>
+									Asset Management
+								</span>
+								<span class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-money'>		
+									</i>
+									<br/>
+									現金管理
+									<br/>
+									Cash Management
+								</span>
+								<div class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-truck'>		
+									</i>
+									<br/>
+									託管
+									<br/>
+									Custodian
+								</div>
+								<div class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-newspaper-o'>		
+									</i>
+									<br/>
+									信託
+									<br/>
+									Trust
+								</div>
+								<div class="col-xs-3 fragment fade-up size4">
+									<i class='fa fa-line-chart'>		
+									</i>
+									<br/>
+									證券期貨
+									<br/>
+									Securities and Futures
+								</div>
+							</ul>
+						</blockquote>
+					</div>
+				</section>
+				<section>
+					<h3 class='type1 gray'>瞻望：如何提升<span class='red'>銀行市場佔有率</span></h3>
+					<div class='row'>
+						<p><b class='red'>開源</b> 還是 <b class='red'>節流</b></p>
+					</div>
+					<div class='col-xs-6'>
+						<table style="float:right; margin-right: 40px">
+							<tbody class='size3' style='margin-top: 20px'>
+								<tr class="fragment">
+									<td><span>儲值支付工具</span><br/>
+									Stored Value Facilities - SVF</td>
+									<td><i class='fa fa-arrow-right red size3'></i></td>
+									<td><img src='img/pic1.jpg' style='width: 120px; top:20px'></td>
+								</tr>
+								<tr class="fragment">
+									<td><span>網上財富管理平台</span><br/>
+									Digital Wealth Management</td>
+									<td><i class='fa fa-arrow-right red size3'></i></td>
+									<td><img src='img/pic2.jpg' style='width: 120px;top:20px'></td>
+								</tr>
+								<tr class="fragment">
+									<td><span>電子貨幣 - 區塊鏈</span><br/>
+									Blockchain</td>
+									<td><i class='fa fa-arrow-right red size3'></i></td>
+									<td><img src='img/pic3.png' style='width: 50px;top:30px;float:right'></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class='col-xs-6'>
+						<table style="float:left; margin-left: 40px" class="fragment">
+							<tbody class='size3' style='margin-top: 20px'>
+								<tr>
+									<td style='border: none;'><span></span><br/><br/>
+									</td>
+									<td style='border: none;'></td>
+									<td style='border: none;'><img src='img/pic4.jpg' style='width: 120px;float:right; top: 40px'></td>
+								</tr>
+								<tr>
+									<td style='text-align:left!important;border: none;'><span>商業智能</span><br/>
+									Business Intelligence</td>
+									<td style='border: none;'><i class='fa fa-arrow-right red size3'></i></td>
+									<td style='border: none;'><img src='img/pic6.png' style='top:30px;float:right'></td>
+								</tr>
+								<tr>
+									<td style='border: none;'><span></span><br/>
+									</td>
+									<td style='border: none;'></td>
+									<td style='border: none;'><img src='img/pic5.png' style='width: 120px;top:10px;float:right'></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+				<section>
+					<h3 class='type1 gray'>1. 所以，<span class='red'>我們</span>可以</h3>
+				</section>
+				<section>
+					<h3 class='type1 gray'>程序<span class='red'>機器人</span>自動化</h3>
+					<p class='size2'><b>程序機器人自動化 (Robotic Process Automation - RPA)</b></p>
+					<ul class='size2' style='line-height: 50px'>
+						<li>將銀行現有系統、軟件，用一個簡單<span class='red'>平台</span>編排起來</li>
+						<li>新世代、自動化的<span class='red'>數據挖掘</span> (Data Scraping/Data Mining)</li>
+						<li>訓練機器人如何去「閱讀」及整理<span class='red'>數據</span><br/>(不論是圖像、文字格式)</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
 </html>
-
