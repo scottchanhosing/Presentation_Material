@@ -29,7 +29,8 @@
 			.reveal p,
 			.reveal span,
 			.reveal li,
-			.reveal td{
+			.reveal td,
+			.reveal button{
 				font-family: "Microsoft JhengHei","Helvetica Neue",Helvetica,Arial,sans-serif;!important
 			}
 			.size1 {
@@ -69,6 +70,10 @@
 				font-size: 28px!important;
 				color:#a22!important;
 			}
+			.size5 {
+				font-size: 13px!important;
+				padding-bottom: 20px!important;
+			}
 			.bg1 {
 				background-image: url("img/bg2.jpg");
 				background-repeat: no-repeat;
@@ -87,6 +92,12 @@
 			}
 			.overview.overview-animated .slides section {
 				background-color: white;
+			}
+			.dc-chart .pie-slice {
+				font-size: 18px
+			}
+			.dc-chart g.row text{
+				font-size: 15px
 			}
 		</style>
 
@@ -109,7 +120,7 @@
 						</p>
 					</div>
 					<div class='col-xs-6 bg1'>
-						<br><br><br><br><br><br><br><br>					
+						<br><br><br><br><br><br><br><br>				
 					</div>
 				</section>
 				<section>
@@ -324,27 +335,64 @@
 					<h3 class='type1 gray'><span class='red'>應用例子</span></h3>
 					<p class='size2'><b>交叉銷售（Cross Selling）</b></p>
 					<div class='row'>
-						<div class='col-xs-4'>
-							
+						<div class='col-xs-5'>
+							<img src='img/pic11.png' style='height: 180px; top:20px'>
+							<h3 class='size2 red'>中銀集團保險</h3>
+							<p class='size3'><i class='fa fa-plane'></i> 旅遊保險：環宇智選旅遊保障計劃</p>
 						</div>
-						<div class='col-xs-4'>
-							
+						<div class='col-xs-2'>
+							<br/>
+							<br/>
+							<div>
+								<i class='fa fa-arrows-h red fragment' style='font-size: 50px'></i>
+							</div>
+							<div>
+								<button id='startana' type='button' class='fragment btn btn-primary size2'>進行分析</button>
+							</div>
+							<div id='hid' style='visibility:hidden; padding-top:20px'>
+								<i class='fa fa-spinner fa-spin fa-3x fa-fw' style='font-size: 30px'></i>
+							</div>
+							<script>
+								$(function() {
+									$('#startana').click(function() {	
+										$('#hid').css('visibility','visible');
+										setTimeout(function() {
+											$('.navigate-right').click()
+										}, 2000);
+										$('#hid').css('visibility','hidden');
+									})
+								})
+							</script>
 						</div>
-						<div class='col-xs-4'>
-							
+						<div class='col-xs-5'>
+							<img src='img/pic12.jpg' style='height: 180px; top:20px'>
+							<h3 class='size2 red'>中銀信用卡</h3>
+							<p class='size3'><i class='fa fa-pie-chart'></i> 市場調研：分析顧客的需求</p>
 						</div>
 					</div>
 				</section>
 				<section>
 					<h3 class='type1 gray'>整理及表達 - <span class='red'>數據可視化</span></h3>
-					<p class='size2'><b>數據可視化（Data Visualization）</b>展示結果</p>
-					<div id="chart3" class="col-xs-12 svg-container" style="padding-top:15px;padding-bottom:30px;">
-					</div>
-					<div>
-						<div class="col-xs-12 col-sm-6" id="chart4_1"></div>
-						<div class="col-xs-12 col-sm-6" id="chart4_2"></div>
-						<div class="col-xs-12 col-sm-6" id="chart4_3"></div>
-						<div class="col-xs-12 col-sm-6" id="chart4_4"></div>
+					<p class='size2'>不同信用卡類別消費<b>數據可視化（Data Visualization）</b>(Demo)</p>
+					
+					<div class='row'>
+						<div id="chart-ring-year" class='col-xs-7' style='padding-top: 20px'>
+							<div class="reset size5" style="visibility: hidden;">年齡已選: <span class="filter"></span>
+								<a href="javascript:yearRingChart.filterAll();dc.redrawAll();">重設</a>
+							</div>
+						</div>
+						<div class='col-xs-5'>
+							<div id="chart-hist-spend">
+								<div class="reset size5" style="visibility: hidden;">消費範圍: <span class="filter"></span>k
+									<a id='chart-hist-spend-1' href=#null>重設</a>
+								</div>
+							</div>
+							<div id="chart-row-spenders">
+								<div class="reset size5" style="visibility: hidden;">信用卡已選: <span class="filter"></span>
+									<a href="javascript:spenderRowChart.filterAll();dc.redrawAll();">重設</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 				<section>
@@ -478,9 +526,6 @@
 		<script src="lib/js/d3.js"></script>
 		<script src="lib/js/crossfilter.js"></script>
 		<script src="lib/js/dc.js"></script>
-		<script>
-			var TotalEntityFile = "data/SAAsection.json";
-		</script>
 		<script src="js/vis.js"></script>
 	</body>
 </html>
