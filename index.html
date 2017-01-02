@@ -99,6 +99,9 @@
 			.dc-chart g.row text{
 				font-size: 15px
 			}
+			img.border-1 {
+				border: 1px solid #222!important;
+			}
 		</style>
 
 	</head>
@@ -126,14 +129,14 @@
 				<section>
 					<h3 class='type1' style='color:#a00;'>流程</h3>
 					<ol class="fragment">
-						<li class="fragment">世界瞬息萬變</li>
+						<!--<li class="fragment">世界瞬息萬變</li>-->
 						<li class="fragment">銀行業時異事異</li>
 						<li class="fragment">我們可以.....</li>
 						<li class="fragment">見縫插針</li>
 						<li class="fragment">爭分奪秒</li>
 					</ol>
 				</section>
-				<section>
+				<!--<section>
 					<h3 class='type1 gray'>1. 世界<span class='red'>瞬息萬變</span></h3>
 				</section>
 				<section>
@@ -143,9 +146,9 @@
 						<li class="fragment">內地經濟增長放緩</li>
 						<li class="fragment">金融市場波動</li>
 					</ul>
-				</section>
+				</section>-->
 				<section>
-					<h3 class='type1 gray'>2. 銀行業<span class='red'>時異事異</span></h3>
+					<h3 class='type1 gray'>1. 銀行業<span class='red'>時異事異</span></h3>
 				</section>
 				<section>
 					<h3 class='type1 gray'>看看<span class='red'>我們</span></h3>
@@ -232,6 +235,25 @@
 						</blockquote>
 					</div>
 				</section>
+				
+				<section>
+					<h3 class='type1 gray'><span class='red'>香港政府</span>對金融科技的支持</h3>
+					<div class='col-xs-8'>
+						<ul class="fragment size2" style='line-height: 43px; padding: 10px 50px 20px'>
+							<li class="fragment">香港應用科技研究院(Hong Kong Applied Science and Technology Research Institute - ASTRI)<br/>
+								<img style='width: 25%;position: fixed;left: 65%;top: 15%;' src='img/pic19.jpg'>
+							</li>
+							<li class="fragment">金融科技促進辦公室(Fintech Innovation Hub)<br/>
+								<img style='width: 30%;position: fixed;left: 69%;top: 35%;' src='img/pic20.jpg'>
+							</li>
+							<li class="fragment">金融科技監管沙盒(Fintech Supervisory Sandbox)<br/>
+								<img style='width: 20%;position: fixed;left: 61%;top: 55%;' src='img/pic21.jpg'>
+							</li>
+						</ul>
+					</div>
+					<div class='col-xs-4'>
+					</div>
+				</section>
 				<section>
 					<h3 class='type1 gray'>瞻望：如何提升<span class='red'>銀行市場佔有率</span></h3>
 					<div class='row'>
@@ -287,7 +309,7 @@
 					</div>
 				</section>
 				<section>
-					<h3 class='type1 gray'>3. 所以，<span class='red'>我們</span>可以</h3>
+					<h3 class='type1 gray'>2. 所以，<span class='red'>我們</span>可以</h3>
 				</section>
 				<section>
 					<h3 class='type1 gray'>程序<span class='red'>機器人</span>自動化</h3>
@@ -313,8 +335,30 @@
 				<section>
 					<h3 class='type1 gray'><span class='red'>特點</span></h3>
 					<ul class='size2' style='line-height: 50px'>
-						<li class="fragment">原本的信息技術基建(IT infrastructure)無須改變，不用經過<br/>整合(Integration)機器人於保留系統(Legacy System)中</li>
-						<li class="fragment">面對未來任何新系統，只要經過「訓練」，機器人也可以運<br/>作，並不斷可重用</li>
+						<li class="fragment">原本的信息技術基建(IT infrastructure)無須改變，不用經過<br/>整合(Integration)機器人於<span class='red'>保留系統</span>(Legacy System)中</li>
+						<li class="fragment">
+							面對未來任何新系統，只要經過「訓練」，機器人也可以運<br/>作，並不斷可重用在內部不同業務 
+							<span class='red'>
+								<i class='fa fa-credit-card'></i>
+								<i class='fa fa-bank'></i>
+								<i class='fa fa-heart-o'></i>
+								<i class='fa fa-home'></i>
+								<i class='fa fa-money'></i>
+								<i class='fa fa-truck'></i>
+								<i class='fa fa-newspaper-o'></i>
+								<i class='fa fa-line-chart'></i>
+							</span>
+						</li>
+						<li class="fragment">
+							機器人也可以擴展收集其他外部第三方數據<br/>
+							<img src='img/pic1.jpg' class='border-1' style='height: 50px; top:20px'>
+							<img src='img/pic14.jpg' class='border-1' style='height: 50px; top:20px'>
+							<img src='img/pic15.jpg' class='border-1' style='height: 50px; top:20px'>
+							<img src='img/pic16.jpg' class='border-1' style='height: 50px; top:20px'>
+							<img src='img/pic13.jpg' class='border-1' style='height: 50px; top:20px'>
+							<img src='img/pic17.jpg' class='border-1' style='height: 50px; top:20px'>
+							<img src='img/pic18.jpg' class='border-1' style='height: 50px; top:20px'>
+						</li>
 					</ul>
 				</section>
 				<section>
@@ -374,29 +418,31 @@
 				<section>
 					<h3 class='type1 gray'>整理及表達 - <span class='red'>數據可視化</span></h3>
 					<p class='size2'>不同信用卡類別消費<b>數據可視化（Data Visualization）</b>(Demo)</p>
-					
 					<div class='row'>
 						<div id="chart-ring-year" class='col-xs-7' style='padding-top: 20px'>
-							<div class="reset size5" style="visibility: hidden;">年齡已選: <span class="filter"></span>
+							<div class="reset size5" style="visibility: hidden;"><b style="visibility: visible;" class='red'>年齡</b>已選: <span class="filter"></span>
 								<a href="javascript:yearRingChart.filterAll();dc.redrawAll();">重設</a>
 							</div>
 						</div>
 						<div class='col-xs-5'>
 							<div id="chart-hist-spend">
-								<div class="reset size5" style="visibility: hidden;">消費範圍: <span class="filter"></span>k
+								<div class="reset size5" style="visibility: hidden;"><b style="visibility: visible;" class='red'>消費</b>範圍: <span class="filter"></span>k
 									<a id='chart-hist-spend-1' href=#null>重設</a>
 								</div>
 							</div>
 							<div id="chart-row-spenders">
-								<div class="reset size5" style="visibility: hidden;">信用卡已選: <span class="filter"></span>
+								<div class="reset size5" style="visibility: hidden;"><b style="visibility: visible;" class='red'>信用卡</b>已選: <span class="filter"></span>
 									<a href="javascript:spenderRowChart.filterAll();dc.redrawAll();">重設</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
+				<!--<section>
+					<h3 class='type1 gray'><span class='red'>前線</span>銷售</h3>	
+				</section>-->
 				<section>
-					<h3 class='type1 gray'>4. <span class='red'>見縫插針</span></h3>
+					<h3 class='type1 gray'>3. <span class='red'>見縫插針</span></h3>
 				</section>
 				<section>
 					<h3 class='type1 gray'><span class='red'>中銀香港</span>的應用及優勢</h3>
@@ -487,24 +533,39 @@
 					</div>
 				</section>
 				<section>
-					<h3 class='type1 gray'>5. <span class='red'>爭分奪秒</span></h3>
+					<h3 class='type1 gray'>4. <span class='red'>爭分奪秒</span></h3>
 				</section>
 				<section>
-					<h3 class='type1 red'>分享</h3>
-					<p class='size2'><b>同行都在嘗試什麼？</b></p>
+					<h3 class='type1 gray'><span class='red'>同行</span>都在嘗試什麼？</h3>
+					<!--<p class='size2'><b></b></p>-->
 					<div style='padding:10px 90px 10px; text-align:left'>
-						<p class='size3'>
-							HSBC automated nearly 3,000 jobs in 2015<br/>
-							<a href='http://diginomica.com/2016/02/22/hsbc-automated-nearly-3000-jobs-in-2015/'>http://diginomica.com/2016/02/22/hsbc-automated-nearly-3000-jobs-in-2015/</a>
+						<p class='size3' style='margin:5px 0 5px'>
+							<a href='http://diginomica.com/2016/02/22/hsbc-automated-nearly-3000-jobs-in-2015/'><b class='red'>HSBC</b></a> automated nearly 3,000 jobs in 2015
 						</p>
-						<p class='size3'>
-							Citi: Robots could kill another 30% of bank jobs<br/>
-							<a href='http://money.cnn.com/2016/04/04/investing/bank-jobs-dying-automation-citigroup/'>http://money.cnn.com/2016/04/04/investing/bank-jobs-dying-automation-citigroup/</a>
+						<!--<p style='margin:5px 0 5px'>
+							<a style='font-size:13px' href='http://diginomica.com/2016/02/22/hsbc-automated-nearly-3000-jobs-in-2015/'>http://diginomica.com/2016/02/22/hsbc-automated-nearly-3000-jobs-in-2015/</a>
+						</p>-->
+						<blockquote style='font-size:18px; float:left;margin:5px 0 5px; width: 90%'>
+							A major <span class='red'>restructure of its business</span> that will likely see it make up to $5 billion in cost savings and reduce its workforce
+						</blockquote>
+						<br/>
+						<br/>
+						<p class='size3' style='margin:15px 0 5px'>
+							<a href='http://money.cnn.com/2016/04/04/investing/bank-jobs-dying-automation-citigroup/'><b class='red'>Citi</b></a>: Robots could kill another 30% of bank jobs<br/>
+							<!--<a style='font-size:13px' href='http://money.cnn.com/2016/04/04/investing/bank-jobs-dying-automation-citigroup/'>http://money.cnn.com/2016/04/04/investing/bank-jobs-dying-automation-citigroup/</a>-->
 						</p>
-						<p class='size3'>
-							Bank of England's chief economist: Robots threaten 15m UK jobs<br/>
-							<a href='https://www.theguardian.com/business/2015/nov/12/robots-threaten-low-paid-jobs-says-bank-of-england-chief-economist'>https://www.theguardian.com/business/2015/nov/12/robots-threaten-low-paid-jobs-says-bank-of-england-chief-economist</a>
+						<blockquote style='font-size:18px; float:left;margin:5px 0 5px; width: 90%'>
+							How will banks respond? In part by cutting costs -- something <span class='red'>most big banks have already done lots</span> of since the 2008 financial crisis.
+						</blockquote>
+						<br/>
+						<br/>
+						<p class='size3' style='margin:15px 0 5px'>
+							<a href='https://www.theguardian.com/business/2015/nov/12/robots-threaten-low-paid-jobs-says-bank-of-england-chief-economist'><b class='red'>Bank of England</b></a>'s chief economist: Robots threaten 15m UK jobs<br/>
+							<!--<a style='font-size:13px' href='https://www.theguardian.com/business/2015/nov/12/robots-threaten-low-paid-jobs-says-bank-of-england-chief-economist'>https://www.theguardian.com/business/2015/nov/12/robots-threaten-low-paid-jobs-says-bank-of-england-chief-economist</a>-->
 						</p>
+						<blockquote style='font-size:18px; float:left;margin:5px 0 5px; width: 90%'>
+							<span class='red'>Increasing automation</span> of the workplace might already be helping to depress wage growth, explaining why inflation has consistently undershot the government’s 2% target.
+						</blockquote>
 					</div>				
 				</section>
 			</div>
